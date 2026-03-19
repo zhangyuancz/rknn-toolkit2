@@ -136,6 +136,8 @@ install(FILES ${LABEL_FILE} DESTINATION ./model/)
 if(MPP_LIBS)
   install(TARGETS rknn_yolov5_video_demo DESTINATION ./)
   install(PROGRAMS ${MPP_LIBS} DESTINATION lib)
+  # Also install the real library file that the symlink points to
+  install(PROGRAMS ${MPP_PATH}/${CMAKE_SYSTEM_NAME}/${LIB_ARCH}/librockchip_mpp.so.0 DESTINATION lib)
 endif()
 
 if(ZLMEDIAKIT_LIBS)
